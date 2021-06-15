@@ -1,10 +1,10 @@
 package entities;
 
 public class Conta {
-	public double saldo;
-	public int agencia;
-	public int numero;
-	public Cliente titular;
+	private double saldo;
+	private int agencia;
+	private int numero;
+	private Cliente titular;
 	
 	
 	public void deposita(double valor) {
@@ -33,9 +33,7 @@ public class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
+
 	public int getAgencia() {
 		return agencia;
 	}
