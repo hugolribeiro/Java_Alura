@@ -20,6 +20,7 @@ public class Gerente extends Funcionario{
 	public double getBonificacao() {
 		//super quer dizer que pega métodos e atributos da classe super (olha para cima)
 		// bonificacao padrão + salário
+		System.out.println("Chamando o método de bonificacao do GERENTE");
 		return super.getBonificacao() + super.getSalario();
 	}
 	
