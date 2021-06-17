@@ -16,8 +16,11 @@ public class Gerente extends Funcionario{
 		this.senha = senha;
 	}
 	
-//	public double getBonificacao() {
-//		return this.salario;
-//	}
+	
+	public double getBonificacao() {
+		//super quer dizer que pega métodos e atributos da classe super (olha para cima)
+		// bonificacao padrão + salário
+		return super.getBonificacao() + super.getSalario();
+	}
 	
 }
