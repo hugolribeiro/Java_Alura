@@ -1,6 +1,7 @@
 package entities;
 
-public class Funcionario {
+// não pode instanciar objetos dessa classe, pois é abstrata
+public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
@@ -10,10 +11,8 @@ public class Funcionario {
 		
 	}
 	
-	public double getBonificacao() {
-		// 10 % de bonificacao
-		return this.salario * 0.10;
-	}
+	// método abstrato, sem corpo.
+	public abstract double getBonificacao();
 	
 	public String getNome() {
 		return nome;
