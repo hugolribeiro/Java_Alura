@@ -9,7 +9,8 @@ public class Teste {
 
     public static void main(String[] args) {
 
-        ArrayList lista = new ArrayList();
+        // Generics
+        ArrayList<Conta> lista = new ArrayList<Conta>();
 
         Conta cc = new ContaCorrente(22, 11);
         lista.add(cc);
@@ -39,9 +40,9 @@ public class Teste {
 
         System.out.println("----------------");
 
-        for (Object o:
+        for (Conta conta:
              lista) {
-            System.out.println(o);
+            System.out.println(conta);
         }
 
     }
