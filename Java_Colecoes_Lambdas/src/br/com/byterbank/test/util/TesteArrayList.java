@@ -5,7 +5,7 @@ import entities.ContaCorrente;
 
 import java.util.ArrayList;
 
-public class Teste {
+public class TesteArrayList {
 
     public static void main(String[] args) {
 
