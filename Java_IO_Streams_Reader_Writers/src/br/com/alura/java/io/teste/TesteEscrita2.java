@@ -8,14 +8,13 @@ public class TesteEscrita2 {
 
         // Fluxo de Saída de Arquivo
 
-        OutputStream fos = new FileOutputStream("lorem2.txt");
+//        OutputStream fos = new FileOutputStream("lorem2.txt");
+//        Writer osw = new OutputStreamWriter(fos);
+//        BufferedWriter bw = new BufferedWriter(osw);
 
-        // Transforma os bits e bytes do arquivo em caracteres
-        Writer osw = new OutputStreamWriter(fos);
-
-        BufferedWriter bw = new BufferedWriter(osw);
-
+        BufferedWriter bw = new BufferedWriter(new FileWriter("lorem5.txt"));
         bw.write("TESTANDOOOO Lorem2");
+        bw.newLine();
         bw.newLine();
         bw.newLine();
         bw.write("Mais outro teste em outra linha");
