@@ -1,9 +1,6 @@
 package br.com.alura.java8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ExemploCursos {
@@ -39,9 +36,25 @@ public class ExemploCursos {
         System.out.println(sum);
 
         // Optional ajuda a trabalhar com referências que podem ser null
-        Optional<Curso> curso = cursos.stream()
+        Optional<Curso> optionalCurso = cursos.stream()
                 .filter(c -> c.getAlunos() >= 100)
                 .findAny();
 
+        optionalCurso.ifPresent(c -> System.out.println(c.getNome()));
+
+        // Stream para uma Collection List
+        List<Curso> resultado = cursos.stream()
+                                    .filter(c -> c.getAlunos() >= 100)
+                                    .collect(Collectors.toList());
+
+        // Stream para uma Collection Map
+        Map<String, Integer> map = cursos.stream()
+                                        .filter(c -> c.getAlunos() >= 100)
+                                        .collect(Collectors.toMap(
+                                                c -> c.getNome(),
+                                                c -> c.getAlunos()
+                                        ));
+
+        System.out.println(map);
     }
 }
