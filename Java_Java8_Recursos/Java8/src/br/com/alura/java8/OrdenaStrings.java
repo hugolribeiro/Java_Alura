@@ -21,6 +21,12 @@ public class OrdenaStrings {
         palavras.sort(comparador);
         System.out.println(palavras);
 
+        //Usando Lambda
+        palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+
+        // Usando Reference Method
+        palavras.sort(Comparator.comparingInt(String::length));
+
         // antes do java 8
         for (String p: palavras){
             System.out.println(p);
@@ -29,6 +35,22 @@ public class OrdenaStrings {
         // java 8
         Consumer<String> consumidor = new ImprimeNaLinha();
         palavras.forEach(consumidor);
+
+        // Classe anônima
+        Consumer<String> consumidor2 = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+
+        // Função anônima (lambda)
+        System.out.println("-------------LAMBDA FUNCTION-----------");
+        palavras.forEach((s) -> System.out.println(s));
+
+        // Reference Method
+        System.out.println("-------------REFERENCE METHOD-----------");
+        palavras.forEach(System.out::println);
     }
 }
 
